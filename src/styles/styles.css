@@ -1,0 +1,41 @@
+/* Reset CSS */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: inherit;
+}
+
+/* Color Variables */
+:root {
+    --color-white: #ffffff;
+    --color-ivory: #eeeeee;
+    --color-black: #000000;
+    --color-gray: #222222;
+
+    --color-purple: #a83686;
+    --color-purple-transparent: rgba(88, 24, 69, .9);
+    --color-pink-transparent: rgba(216, 14, 91, .9);
+
+    --shadow: rgba(0, 0, 0, .4);
+}
+
+.app {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, 
+    var(--color-pink-transparent), var(--color-purple-transparent)), 
+    url(https://cdn1.epicgames.com/ue/product/Screenshot/7-1920x1080-7bf8922bfdb5b3c5b7d593e9518052d7.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
