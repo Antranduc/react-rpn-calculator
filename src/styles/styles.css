@@ -39,3 +39,86 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.calculator {
+    height: 80vh;
+    width: 25%;
+    box-shadow: 0 2rem 4rem var(--shadow);
+    background-color: var(--color-white);
+}
+
+/* Screens */
+
+.screen {
+    height: 25vh;
+    width: 100%;
+    padding: 0 2rem;
+    overflow: hidden;
+    white-space: no-wrap;
+    color: var(--color-ivory);
+    background-color: var(--color-purple);
+}
+.result-screen {
+    height: 19vh;
+    font-size: 8rem;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.computation-screen {
+    height: 6vh;
+    font-size: 2.5rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* Keypad */
+.keypad_row {
+    height: 11vh;
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.keypad {
+    height: 55vh;
+    width: 100%;
+}
+
+/* Button */
+.btn {
+    width: 25%;
+    height: 100%;
+    font-size: 3rem;
+    font-family: inherit;
+    background-color: var(--color-white);
+    border: 1px solid transparent;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+.btn:hover {
+    color: var(--color-ivory);
+    background-color: var(--color-purple);
+}
+.btn:active {
+    transform: scale(.95);
+}
+
+.btn--large {
+    width: 50%;
+    color: var(--color-white);
+    background-color: var(--color-purple);
+    transition: all .2s;
+  }
+  .btn--large:hover {
+    background-color: var(--color-white);
+    color: var(--color-purple);
+  }
