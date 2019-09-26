@@ -16,9 +16,41 @@ class Calculator extends React.Component {
             return this.clear();
         else if ((pressedButton >= '0' && pressedButton <= '9') || pressedButton === '.')
             equation += pressedButton;
-        else if (['+', '-', '*', '/', '%'].indexOf(pressedButton) !== -1)
-            equation += ' ' + pressedButton + ' ';
-        else if(pressedButton === '='){
+        else if (['+', '-', '*', '/', '%'].indexOf(pressedButton) !== -1){
+            /* equation += ' ' + pressedButton + ' '; */
+            var tempEquation = equation.split(' ');
+            if(tempEquation.length < 2){
+                alert('Not enough arguments.');
+            }else{
+                var num2 = Number(tempEquation.pop());
+                var num1 = Number(tempEquation.pop());
+                switch(['+', '-', '*', '/', '%'].indexOf(pressedButton)){
+                    case 0:
+                        this.setState({result: num1 + num2});
+                        this.setState({equation: tempEquation.join(' ')});
+                        break;
+                    case 1:
+                        this.setState({result: num1 - num2});
+                        this.setState({equation: tempEquation.join(' ')});
+                        break;
+                    case 2:
+                        this.setState({result: num1 * num2});
+                        this.setState({equation: tempEquation.join(' ')});
+                        break;
+                    case 3:
+                        this.setState({result: num1 / num2});
+                        this.setState({equation: tempEquation.join(' ')});
+                        break;
+                    case 4:
+                        this.setState({result: num1 % num2});
+                        this.setState({equation: tempEquation.join(' ')});
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }else if(pressedButton === 'Enter'){
+            /* Original code for regular calculator
             try{
                 const evalResult = eval(equation);
                 const result = Number.isInteger(evalResult) ? evalResult : evalResult.toFixed(2);
@@ -26,6 +58,8 @@ class Calculator extends React.Component {
             }catch(error){
                 alert('Invalid Mathematical Equation');
             }
+            */
+           equation += ' ';
         }else{
             equation = equation.trim();
             equation = equation.substr(0, equation.length-1);
