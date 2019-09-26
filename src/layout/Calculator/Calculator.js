@@ -20,7 +20,7 @@ class Calculator extends React.Component {
             /* equation += ' ' + pressedButton + ' '; */
             var tempEquation = equation.split(' ');
             if(tempEquation.length < 2){
-                alert('Not enough arguments.');
+                alert('Not enough operands.');
             }else{
                 var num2 = Number(tempEquation.pop());
                 var num1 = Number(tempEquation.pop());
